@@ -9,8 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "Tb_Category")
@@ -23,8 +25,9 @@ public class Category implements Serializable{
 	
 	private String name;
 	
-	@Transient
-	private Set<Category> categories = new HashSet<>();
+	@JsonIgnore
+	@ManyToMany(mappedBy = "categories")
+	private Set<Product> products = new HashSet<>();
 	
 	public Category() {
 		}
@@ -51,8 +54,8 @@ public class Category implements Serializable{
 		this.name = name;
 	}
 	
-	public Set<Category> getCategories() {
-		return categories;
+	public Set<Product> getProducts() {
+		return products;
 	}
 
 	@Override
