@@ -20,7 +20,7 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	
 	private String name;
 	
@@ -33,7 +33,7 @@ public class User {
 	public User () {
 	}
 	
-	public User(Integer id, String name, String email, String phone, String password) {
+	public User(Long id, String name, String email, String phone, String password) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -47,11 +47,11 @@ public class User {
 	private List<Order> orders = new ArrayList<>();
 	
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
