@@ -10,6 +10,7 @@ import com.educandoweb.curso.entities.User;
 import com.educandoweb.curso.repositories.UserRepository;
 
 @Service
+/* Anotação para registrar a classe como um coponente do Spring e assim poder fazer a injeção de dependência */
 public class UserService {
 	
 	@Autowired

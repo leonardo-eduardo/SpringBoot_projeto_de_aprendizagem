@@ -1,5 +1,6 @@
 package com.educandoweb.curso.entities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -15,11 +16,15 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
+/* Anotação do JPA para converter os objetos para o modelo realacional */
 @Table(name = "Tb_User")
-public class User {
-	
+public class User implements Serializable{
+	                        /* Interface Serializable para definir os objetos como cadeias de bytes para serem trafegados na rede*/
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	/* Anotações para indentificar a chave primária e auto incrementar */
 	private Long id;
 	
 	private String name;

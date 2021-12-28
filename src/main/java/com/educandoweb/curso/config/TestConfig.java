@@ -21,13 +21,16 @@ import com.educandoweb.curso.repositories.OrderItemRepository;
 import com.educandoweb.curso.repositories.OrderRepository;
 import com.educandoweb.curso.repositories.ProductRepository;
 import com.educandoweb.curso.repositories.UserRepository;
-
+/* Classe auxiliar e específica para fazer testes na aplicação */
 @Configuration
+/* Anotação para definir a classe como classe de teste de configuração */
 @Profile("test")
+/* Anotação para definir a classe como específica para testes */ 
 @Repository
 public class TestConfig implements CommandLineRunner {
 
 	@Autowired
+	/* Anotação para associar uma instância do UserRepository na classe TestConfig e resolver a injeção de depedência */
 	private ProductRepository ProductRepository;
 	
 	@Autowired

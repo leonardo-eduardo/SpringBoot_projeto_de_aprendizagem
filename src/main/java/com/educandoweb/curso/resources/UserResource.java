@@ -19,14 +19,18 @@ import com.educandoweb.curso.entities.User;
 import com.educandoweb.curso.services.UserService;
 
 @RestController
+/* Anotação para definir a classe como um recurso web implementada por um controlador Rest*/
 @RequestMapping(value = "/users")
+/* Anotação para nomear o recurso no caso: /users */
 public class UserResource {
 	
 	@Autowired
 	public UserService service;
 	
 	@GetMapping
+	/* Anotação para responder a requisição do tipo GET do HTTP */
 	public ResponseEntity<List<User>> findAll(){
+		   /* ResponseEntity é um tipo generics para retornar respostas de requisições web */
 		List<User> list = service.findAll();
 		return ResponseEntity.ok().body(list);
 	}
